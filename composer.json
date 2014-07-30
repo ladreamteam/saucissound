@@ -21,12 +21,14 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-        "ext-intl": "*",
-        "squizlabs/php_codesniffer": "2.0.x-dev"
+        "ext-intl": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
         "phpmd/phpmd": "2.0.*",
+        "nikic/php-parser": "1.0.*@dev",
+        "squizlabs/php_codesniffer": "2.0.x-dev",
+        "instaclick/symfony2-coding-standard": "dev-master",
         "fabpot/php-cs-fixer": "0.5.x-dev"
     },
     "scripts": {
