@@ -4,7 +4,10 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/", "SymfonyStandard": "app/" }
+        "psr-0": {
+            "": "src/",
+            "SymfonyStandard": "app/"
+        }
     },
     "require": {
         "php": ">=5.3.3",
@@ -21,7 +24,8 @@
         "ext-intl": "*"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "phpmd/phpmd": "2.0.*"
     },
     "scripts": {
         "post-root-package-install": [
