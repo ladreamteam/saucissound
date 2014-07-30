@@ -21,11 +21,13 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-        "ext-intl": "*"
+        "ext-intl": "*",
+        "squizlabs/php_codesniffer": "2.0.x-dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
-        "phpmd/phpmd": "2.0.*"
+        "phpmd/phpmd": "2.0.*",
+        "fabpot/php-cs-fixer": "0.5.x-dev"
     },
     "scripts": {
         "post-root-package-install": [
