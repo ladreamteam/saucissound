@@ -1,0 +1,4 @@
+saucis_sound_community:
+    resource: "@SaucisSoundCommunityBundle/Resources/config/routing.yml"
+    prefix:   /api
+
