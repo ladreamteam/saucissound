@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
             new SaucisSound\Bundle\CommunityBundle\SaucisSoundCommunityBundle(),
+            new SaucisSound\Bundle\CoreBundle\SaucisSoundCoreBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
