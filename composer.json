@@ -21,7 +21,11 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-        "ext-intl": "*"
+        "ext-intl": "*",
+
+        "stof/doctrine-extensions-bundle": "~1.1@dev",
+        "jms/serializer-bundle": "0.13.*@dev",
+        "friendsofsymfony/rest-bundle": "1.4.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
