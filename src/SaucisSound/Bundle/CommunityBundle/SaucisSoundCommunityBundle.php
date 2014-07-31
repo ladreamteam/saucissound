@@ -18,6 +18,6 @@ class SaucisSoundCommunityBundle extends Bundle
     {
         parent::build($container);
 
-        $container->addCompilerPass(new ValidatorPass());
+        $container->addCompilerPass(new ValidatorPass(__DIR__));
     }
 }
