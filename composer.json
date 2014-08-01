@@ -69,7 +69,24 @@
         "symfony-var-dir": "var",
         "symfony-web-dir": "web",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file": "app/config/parameters.yml",
+            "env-map": {
+                "database_driver": "SYMFONY__DATABASE__DRIVER",
+                "database_host": "SYMFONY__DATABASE__HOST",
+                "database_port": "SYMFONY__DATABASE__PORT",
+                "database_name": "SYMFONY__DATABASE__NAME",
+                "database_user": "SYMFONY__DATABASE__USER",
+                "database_password": "SYMFONY__DATABASE__PASSWORD",
+                "mailer_transport": "SYMFONY__MAILER__TRANSPORT",
+                "mailer_host": "SYMFONY__MAILER__HOST",
+                "mailer_user": "SYMFONY__MAILER__USER",
+                "mailer_password": "SYMFONY__MAILER__PASSWORD",
+                "locale": "SYMFONY__LOCALE",
+                "secret": "SYMFONY__SECRET",
+                "debug_toolbar": "SYMFONY__DEBUG__TOOLBAR",
+                "debug_redirects": "SYMFONY__DEBUG__REDIRECTS",
+                "use_assetic_controller": "SYMFONY__USE__ASSETIC__CONTROLLER"
+            }
         },
         "branch-alias": {
             "dev-master": "2.5-dev"
