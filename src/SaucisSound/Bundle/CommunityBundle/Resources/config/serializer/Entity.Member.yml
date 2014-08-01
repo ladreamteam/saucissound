@@ -1,0 +1,24 @@
+SaucisSound\Bundle\CommunityBundle\Entity\Member:
+    read_only: true
+    exclusion_policy: all
+    access_type: public_method
+
+    properties:
+        id:
+            expose: true
+            accessor:
+                getter: getId
+            groups:
+                - user_basic
+        email:
+            expose: true
+            accessor:
+                getter: getEmail
+            groups:
+                - user_basic
+        username:
+            expose: true
+            accessor:
+                getter: getUsername
+            groups:
+                - user_basic
