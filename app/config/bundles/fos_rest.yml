@@ -10,7 +10,6 @@ fos_rest:
         formats:
             json: true
         view_response_listener: force
-        failed_validation: 409
         serialize_null: true
     body_listener:
         array_normalizer: fos_rest.normalizer.camel_keys
