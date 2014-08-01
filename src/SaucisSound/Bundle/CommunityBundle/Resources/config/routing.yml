@@ -1,3 +1,3 @@
-saucis_sound_community_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: SaucisSoundCommunityBundle:Default:index }
+members:
+    type: rest
+    resource: SaucisSound\Bundle\CommunityBundle\Controller\MemberController
