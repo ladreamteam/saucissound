@@ -2,8 +2,11 @@
 
 namespace SaucisSound\Bundle\CommunityBundle\Form;
 
+use SaucisSound\Bundle\CommunityBundle\Model\MemberInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
@@ -20,8 +23,25 @@ class MemberType extends AbstractType
     {
         $builder
             ->add('username', 'text')
-            ->add('email', 'email')
-            ->add('password', 'password');
+            ->add('password', 'password')
+            ->addEventListener(FormEvents::PRE_SET_DATA, [$this, 'createEventListener']);
+    }
+
+    /**
+     * Adds some fields when trying to create (instead of update) a Member entity.
+     *
+     * @param FormEvent $event
+     */
+    public function createEventListener(FormEvent $event)
+    {
+        /** @var MemberInterface $member */
+        $member = $event->getData();
+        $form   = $event->getForm();
+
+        // if this is a new member, we need his email
+        if (is_null($member) || is_null($member->getId())) {
+            $form->add('email', 'email');
+        }
     }
 
     /**
