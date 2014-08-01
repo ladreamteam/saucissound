@@ -1,0 +1,19 @@
+SaucisSound\Bundle\CommunityBundle\Entity\Member:
+    type: entity
+    repositoryClass: SaucisSound\Bundle\CommunityBundle\Entity\MemberRepository
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        username:
+            type: string
+        email:
+            type: string
+            unique: true
+        password:
+            type: string

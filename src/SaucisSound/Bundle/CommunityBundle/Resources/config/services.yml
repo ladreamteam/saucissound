@@ -1,7 +1,22 @@
 parameters:
-#    saucis_sound_community.example.class: SaucisSound\Bundle\CommunityBundle\Example
+    saucis_sound_community.handler.member.class: 'SaucisSound\Bundle\CommunityBundle\Handler\MemberHandler'
+
+    saucis_sound_community.entity.member.class: 'SaucisSound\Bundle\CommunityBundle\Entity\Member'
+
+    saucis_sound_community.repository.member.class: 'SaucisSound\Bundle\CommunityBundle\Entity\MemberRepository'
 
 services:
-#    saucis_sound_community.example:
-#        class: %saucis_sound_community.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    # MemberHandler as a service
+    saucis_sound_community.handler.member:
+        class: %saucis_sound_community.handler.member.class%
+        arguments:
+            - @saucis_sound_community.repository.member
+            - @form.factory
+
+    # MemberRepository as a service
+    saucis_sound_community.repository.member:
+        class: %saucis_sound_community.repository.member.class%
+        factory_service: 'doctrine'
+        factory_method: 'getRepository'
+        arguments:
+            - %saucis_sound_community.entity.member.class%

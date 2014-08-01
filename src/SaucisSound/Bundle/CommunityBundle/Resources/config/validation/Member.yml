@@ -1,0 +1,13 @@
+SaucisSound\Bundle\CommunityBundle\Entity\Member:
+
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+
+    properties:
+        username:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+        password:
+            - NotBlank: ~
