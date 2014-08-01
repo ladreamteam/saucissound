@@ -70,7 +70,7 @@ class MemberController extends SaucisSoundController
         $manager = $this->getDoctrine()->getManager();
         $manager->flush();
 
-        return $this->getPutView($member, 'get_member', ['id' => 1], ['user_basic']);
+        return $this->getGetView($member, ['user_basic']);
     }
 
     /**
@@ -92,6 +92,6 @@ class MemberController extends SaucisSoundController
         $manager = $this->getDoctrine()->getManager();
         $manager->flush();
 
-        return $this->getPutView($member, 'get_member', ['id' => 1], ['user_basic']);
+        return $this->getGetView($member, ['user_basic']);
     }
 }
