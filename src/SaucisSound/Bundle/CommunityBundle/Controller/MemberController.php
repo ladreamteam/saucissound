@@ -50,4 +50,48 @@ class MemberController extends SaucisSoundController
 
         return $this->getGetView($member, ['user_basic']);
     }
+
+    /**
+     * Updates a Member entity.
+     *
+     * @param Request $request
+     * @param         $id
+     *
+     * @return View
+     */
+    public function putMemberAction(Request $request, $id)
+    {
+        /** @var MemberHandlerInterface $handler */
+        $handler = $this->get('saucis_sound_community.handler.member');
+        $member  = $handler->get($id);
+        $member  = $handler->update($member, $request->request->all(), false);
+
+        /** @var ObjectManager $manager */
+        $manager = $this->getDoctrine()->getManager();
+        $manager->flush();
+
+        return $this->getPutView($member, 'get_member', ['id' => 1], ['user_basic']);
+    }
+
+    /**
+     * Updates partially a Member entity.
+     *
+     * @param Request $request
+     * @param         $id
+     *
+     * @return View
+     */
+    public function patchMemberAction(Request $request, $id)
+    {
+        /** @var MemberHandlerInterface $handler */
+        $handler = $this->get('saucis_sound_community.handler.member');
+        $member  = $handler->get($id);
+        $member  = $handler->update($member, $request->request->all());
+
+        /** @var ObjectManager $manager */
+        $manager = $this->getDoctrine()->getManager();
+        $manager->flush();
+
+        return $this->getPutView($member, 'get_member', ['id' => 1], ['user_basic']);
+    }
 }
