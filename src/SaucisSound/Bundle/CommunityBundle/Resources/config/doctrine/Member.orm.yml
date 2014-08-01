@@ -1,5 +1,6 @@
 SaucisSound\Bundle\CommunityBundle\Entity\Member:
     type: entity
+    table: member
     repositoryClass: SaucisSound\Bundle\CommunityBundle\Entity\MemberRepository
 
     id:
