@@ -33,10 +33,11 @@ interface MemberHandlerInterface
      *
      * @param MemberInterface $member     Member entity to update
      * @param array           $properties properties to update (key => value)
+     * @param boolean $partial update partially the Member entity?
      *
      * @return MemberInterface
      */
-    public function update(MemberInterface $member, array $properties);
+    public function update(MemberInterface $member, array $properties, $partial = true);
 
     /**
      * Gets a Member entity from an id.
