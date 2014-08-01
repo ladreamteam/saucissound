@@ -23,8 +23,30 @@ class SaucisSoundController extends FOSRestController
      */
     public function getPostView($resource, $route, array $parameters = [], array $groups = [])
     {
-        // classic view for a 201
+        // classic view for a post
         $view = $this->routeRedirectView($route, $parameters);
+
+        // add the resource to avoid a query
+        $view->setData($resource);
+        $view->getSerializationContext()->setGroups($groups);
+
+        return $view;
+    }
+
+    /**
+     * Creates a new View for a put request response.
+     *
+     * @param mixed  $resource   the updated resource
+     * @param string $route      name of the route to get the resource updated
+     * @param array  $parameters parameters for the route
+     * @param array  $groups     groups to serialize
+     *
+     * @return View
+     */
+    public function getPutView($resource, $route, array $parameters = [], array $groups = [])
+    {
+        // classic view for a put
+        $view = $this->routeRedirectView($route, $parameters, 200);
 
         // add the resource to avoid a query
         $view->setData($resource);
