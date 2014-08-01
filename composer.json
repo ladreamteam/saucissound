@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "SaucisSound",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "SaucisSound BACK-END",
     "autoload": {
         "psr-0": {
             "": "src/",
