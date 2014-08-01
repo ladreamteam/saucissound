@@ -11,6 +11,7 @@ fos_rest:
             json: true
         view_response_listener: force
         serialize_null: true
+        exception_wrapper_handler: SaucisSound\Bundle\CoreBundle\Handler\SaucisSoundExceptionHandler
     body_listener:
         array_normalizer: fos_rest.normalizer.camel_keys
     format_listener:
